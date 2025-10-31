@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ember Room - Fine Dining Experience</title>
+    <meta name="description" content="Experience exquisite cuisine in a warm, inviting atmosphere at The Ember Room restaurant">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f59e0b",
+                        secondary: "#d97706",
+                        accent: "#92400e",
+                        warm: "#fef3c7",
+                        light: "#fffbeb"
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(255, 251, 235, 0.7), rgba(254, 243, 199, 0.7)), url(/Images/Banner1.png);
+            height: 100vh;
+        }
+        
+        .about-section {
+            background-image: linear-gradient(rgba(255, 251, 235, 0.8), rgba(254, 243, 199, 0.8)), url("https://picsum.photos/1920/1080?random=2");
+            min-height: 60vh;
+        }
+        
+        .menu-section {
+            background-image: linear-gradient(rgba(255, 251, 235, 0.8), rgba(254, 243, 199, 0.8)), url("https://picsum.photos/1920/1080?random=3");
+            min-height: 80vh;
+        }
+        
+        .contact-section {
+            background-image: linear-gradient(rgba(255, 251, 235, 0.8), rgba(254, 243, 199, 0.8)), url("https://picsum.photos/1920/1080?random=4");
+            min-height: 60vh;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-light font-sans">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-serif font-bold text-accent">The Ember Room</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#menu" class="text-gray-700 hover:text-primary transition-colors duration-300">Menu</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section parallax flex items-center justify-center">
+        <div class="text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-accent mb-6">The Ember Room</h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">Where every meal tells a story of flavor, warmth, and exceptional craftsmanship</p>
+            <div class="space-x-4">
+                <button class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">View Menu</button>
+                <button class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">Reserve Table</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section parallax py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-serif font-bold text-accent mb-8">Our Story</h2>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Nestled in the heart of the city, The Ember Room brings you an unforgettable dining experience where traditional techniques meet modern innovation. Our chefs craft each dish with passion, using locally-sourced ingredients to create flavors that ignite the senses.
+                </p>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    The warm, inviting atmosphere is designed to make every guest feel at home, while our attentive service ensures your dining experience is nothing short of exceptional.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-accent mb-2">Seasonal Menu</h3>
+                        <p class="text-gray-600">Fresh ingredients curated for each season</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wine-glass-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-accent mb-2">Fine Wines</h3>
+                        <p class="text-gray-600">Curated selection of premium wines</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heart text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-accent mb-2">Warm Service</h3>
+                        <p class="text-gray-600">Attentive staff dedicated to your comfort</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section parallax py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-serif font-bold text-accent text-center mb-12">Our Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Grilled salmon with seasonal vegetables" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <h3 class="text-xl font-semibold text-accent mb-2">Grilled Atlantic Salmon</h3>
+                    <p class="text-gray-600 mb-4">Fresh salmon with herb crust, served with roasted seasonal vegetables and lemon butter sauce</p>
+                    <div class="text-primary font-bold text-lg">$32</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Prime ribeye steak" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <h3 class="text-xl font-semibold text-accent mb-2">Prime Ribeye</h3>
+                    <p class="text-gray-600 mb-4">Aged ribeye steak, perfectly grilled and served with garlic mashed potatoes and red wine reduction</p>
+                    <div class="text-primary font-bold text-lg">$45</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://picsum.photos/400/300?random=7" alt="Truffle mushroom risotto" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <h3 class="text-xl font-semibold text-accent mb-2">Truffle Mushroom Risotto</h3>
+                    <p class="text-gray-600 mb-4">Creamy arborio rice with wild mushrooms, white truffle oil, and parmesan cheese</p>
+                    <div class="text-primary font-bold text-lg">$28</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://picsum.photos/400/300?random=8" alt="Artisanal cheese board" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <h3 class="text-xl font-semibold text-accent mb-2">Artisanal Cheese Board</h3>
+                    <p class="text-gray-600 mb-4">Selection of fine cheeses, house-made crackers, fresh fruits, and honeycomb</p>
+                    <div class="text-primary font-bold text-lg">$24</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://picsum.photos/400/300?random=9" alt="Chocolate lava cake" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <h3 class="text-xl font-semibold text-accent mb-2">Chocolate Lava Cake</h3>
+                    <p class="text-gray-600 mb-4">Warm chocolate cake with molten center, served with vanilla bean ice cream</p>
+                    <div class="text-primary font-bold text-lg">$14</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://picsum.photos/400/300?random=10" alt="Seasonal fruit tart" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
+                    <h3 class="text-xl font-semibold text-accent mb-2">Seasonal Fruit Tart</h3>
+                    <p class="text-gray-600 mb-4">Buttery pastry filled with vanilla custard and topped with fresh seasonal fruits</p>
+                    <div class="text-primary font-bold text-lg">$12</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section parallax py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-4xl font-serif font-bold text-accent text-center mb-8">Visit Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-accent mb-4">Location & Hours</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">123 Culinary Avenue</p>
+                                    <p>Downtown District</p>
+                                    <p>New York, NY 10001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Opening Hours</p>
+                                    <p>Monday - Thursday: 5:00 PM - 10:00 PM</p>
+                                    <p>Friday - Saturday: 5:00 PM - 11:00 PM</p>
+                                    <p>Sunday: 4:00 PM - 9:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Reservations</p>
+                                    <p>(555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-accent mb-4">Make a Reservation</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email Address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Phone Number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                <div>
+                                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>7:00 PM</option>
+                                        <option>7:30 PM</option>
+                                        <option>8:00 PM</option>
+                                        <option>8:30 PM</option>
+                                        <option>9:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-lg font-semibold transition-colors duration-300">Reserve Table</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-accent text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Ember Room</h3>
+                    <p class="text-warm mb-4">Experience the warmth of exceptional dining in an atmosphere designed for memorable moments.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-warm hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-warm hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-warm hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-warm hover:text-primary transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="text-warm hover:text-primary transition-colors duration-300">About</a></li>
+                        <li><a href="#menu" class="text-warm hover:text-primary transition-colors duration-300">Menu</a></li>
+                        <li><a href="#contact" class="text-warm hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-warm">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>123 Culinary Avenue, NY</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>info@emberroom.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-warm/20 mt-8 pt-8 text-center text-warm">
+                <p>&copy; 2024 The Ember Room. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Define navigation items
+        const navigationItems = [
+            { "id": 1, "label": "Home", "href": "#home" },
+            { "id": 2, "label": "About", "href": "#about" },
+            { "id": 3, "label": "Menu", "href": "#menu" },
+            { "id": 4, "label": "Contact", "href": "#contact" }
+        ];
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener("scroll", function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll(".parallax");
+            
+            parallaxElements.forEach(function(el) {
+                const speed = 0.5;
+                el.style.transform = "translateY(" + (scrolled * speed) + "px)";
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.querySelector(".hidden.md\\:flex");
+        
+        mobileMenuButton.addEventListener("click", function() {
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("flex");
+            mobileMenu.classList.toggle("flex-col");
+            mobileMenu.classList.toggle("absolute");
+            mobileMenu.classList.toggle("top-16");
+            mobileMenu.classList.toggle("left-0");
+            mobileMenu.classList.toggle("right-0");
+            mobileMenu.classList.toggle("bg-white");
+            mobileMenu.classList.toggle("p-4");
+            mobileMenu.classList.toggle("shadow-lg");
+        });
+    </script>
+</body>
+</html>
